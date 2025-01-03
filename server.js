@@ -12,7 +12,7 @@ app.use(express.urlencoded({ extended: true }));
 
 const pool = new Pool({
   connectionString:
-    "postgresql://reservations_n60y_user:yoPtIOLxDnqFzOwCAlOBWJkgsTzxw8tn@dpg-ctrqa1jqf0us73dj457g-a/reservations_n60y",
+    process.env.DATABASE_URL,
 });
 
 app.post("/reservations", async (req, res) => {
